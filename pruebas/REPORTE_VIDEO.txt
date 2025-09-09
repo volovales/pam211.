@@ -1,1 +1,22 @@
-qcw
+video Curso Javascript para Principiantes:
+Introducción ,temas y herramientas:
+JavaScript es un lenguaje fundamental en el desarrollo web, utilizado en aplicaciones reconocidas como Facebook y YouTube. Aunque en sus inicios fue un lenguaje limitado, en la actualidad constituye un estándar en la web y se emplea en una gran  variedad de aplicaciones.
+
+Historia de la creación de JavaScript:
+JavaScript fue creado en 1995 por la empresa Netscape con el propósito de dotar de interactividad a los navegadores. Posteriormente fue estandarizado para evitar problemas de compatibilidad garantizando que las páginas web mantuvieran un funcionamiento uniforme en distintos entornos.
+
+Funcionalidad que tiene en los sitios web:
+El lenguaje permite ampliar la interactividad de los sitios web. 
+Permite programar las acciones que ocurren cuando un usuario hace clic en un botón. 
+Asimismo, ofrece la capacidad de almacenar información en el navegador y de identificar el tipo de dispositivo utilizado por el usuario.
+
+Herramientas necesarias para comenzar:
+Para iniciar en JavaScript se requieren únicamente dos herramientas: un navegador web y un editor de código, siendo Visual Studio Code la mas recomendada por su servidor aunque (es el único que es usado).
+
+La consola del navegador:
+El navegador funciona como un intérprete de JavaScript. 
+En este sentido, la consola del navegador constituye un recurso esencial para interactuar con el lenguaje, depurar código y visualizar posibles errores cometidos por el usuario.
+
+Concepto de datos:
+La programación se fundamenta en la manipulación y procesamiento de datos. 
+En este punto, se introduce el concepto de string (cadena de texto), definido como una secuencia de caracteres delimitados por comillas(importante poner las comillas es un error muy comun).
