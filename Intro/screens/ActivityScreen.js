@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Text, View, Button, StyleSheet, ActivityIndicator, Alert } from 'react-native';
+import { useState } from 'react';
+import { Text, View, Button, StyleSheet, ActivityIndicator } from 'react-native';
 export default function ActivityScreen() 
 {
   const [cargando, setCargando] = useState(false);
@@ -7,18 +7,13 @@ export default function ActivityScreen()
     setCargando(true);
     setTimeout(() => {
       setCargando(false);
-      Alert.alert('Carga completa', 'La carga ha finalizado correctamente.');
+      alert('Carga completa');
     }, 3000);
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>Próximamente.....</Text>
-
-      {cargando ? (
-        <ActivityIndicator size="large" color="blue" />
-      ) : (
-        <Button color="red" title="Presione para iniciar" onPress={carga} />
-      )}
+      <Text style={styles.texto}>Presione para iniciar la simulación de carga</Text>
+      {cargando ? (<ActivityIndicator size="large" color="blue" />):(<Button color="red" title="Presione para iniciar" onPress={carga} />)}
     </View>
   );
 }
