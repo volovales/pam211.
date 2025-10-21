@@ -2,33 +2,53 @@ import { Text, StyleSheet, View, Button } from 'react-native'
 import React, { useState } from 'react'
 import BotonesScreen from './BotonesScreen'
 import ContadorScreen from './ContadorScreen'
-import TextInputAlertScreen from './TextInputAlertScreen'
-import ActivityScreen from './ActivityScreen'  
+import TextInpuScreen from './TextInpuScreen'
+import ImageScreen from './ImageScreen'
+import ActivityScreen from './ActivityScreen'
 
 export default function MenuScreen() {
-    const [screen, setScreen] = useState('menu');
-    switch (screen) {
-        case 'contador':
-            return <ContadorScreen/>;
-        case 'botones':
-            return<BotonesScreen/>;
-        case 'texto':
-            return <TextInputAlertScreen/>;
-        case 'ruedita':
-            return <ActivityScreen/>;
-        case'menu':
-            default:
-            return(
-                    <View>
-                        <Text> Menu de Practicas</Text>
-                        <Button  onPress={()=>setScreen('contador')} title='Practica Contador'></Button>
-                        <Button  onPress={()=>setScreen('botones')} title='Practica Botones'></Button>
-                        <Button  onPress={()=>setScreen('texto')} title='Practica texto'></Button>
-                        <Button  onPress={()=>setScreen('ruedita')} title='Practica ruedita'></Button>
-                    </View>
-                
-                )
-            }
+  const [screen, setScreen] = useState('menu');
+
+  switch (screen) {
+    case 'contador':
+      return <ContadorScreen />;
+    
+      case 'botones':
+      return <BotonesScreen />;
+    
+      case 'texto':
+      return <TextInpuScreen />;  
+
+      case 'ruedita':
+      return <ActivityScreen />;
+      case 'imagen':
+      return <ImageScreen />;
+      case 'menu':
+      default:
+      return (
+        <View style={styles.container}>
+          <Text style={styles.title}>Menú de Prácticas</Text>
+          <Button onPress={() =>setScreen('contador')} title='Práctica Contador' ></Button>
+          <Button onPress={() =>setScreen('botones')} title='Práctica Botones' ></Button>
+          <Button onPress={() =>setScreen('texto')} title='Práctica Texto' ></Button>
+          <Button onPress={() =>setScreen('ruedita')} title='Práctica Ruedita' ></Button>
+          <Button onPress={() =>setScreen('imagen')} title='Práctica Imagen' ></Button>
+        </View>
+      )
+  }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 10,
+    backgroundColor: 'white',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+})
