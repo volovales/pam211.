@@ -5,25 +5,35 @@ import ContadorScreen from './ContadorScreen'
 import TextInpuScreen from './TextInpuScreen'
 import ImageScreen from './ImageScreen'
 import ActivityScreen from './ActivityScreen'
+import ScrollScreen from  './ScrollScreen'
+import RePasoScreen from  './RePasoScreen'
 
 export default function MenuScreen() {
   const [screen, setScreen] = useState('menu');
 
   switch (screen) {
     case 'contador':
-      return <ContadorScreen />;
-    
-      case 'botones':
-      return <BotonesScreen />;
-    
-      case 'texto':
-      return <TextInpuScreen />;  
+    return <ContadorScreen />;
 
-      case 'ruedita':
-      return <ActivityScreen />;
-      case 'imagen':
-      return <ImageScreen />;
-      case 'menu':
+    case 'botones':
+    return <BotonesScreen />;
+
+    case 'texto':
+    return <TextInpuScreen />; 
+
+    case 'ruedita':
+    return <ActivityScreen />;
+
+    case 'imagen':
+    return <ImageScreen />;
+
+    case 'scrol':
+    return <ScrollScreen/>;
+    
+    case 'repaso':
+    return <RePasoScreen/>;
+
+    case 'menu':
       default:
       return (
         <View style={styles.container}>
@@ -33,6 +43,8 @@ export default function MenuScreen() {
           <Button onPress={() =>setScreen('texto')} title='Práctica Texto' ></Button>
           <Button onPress={() =>setScreen('ruedita')} title='Práctica Ruedita' ></Button>
           <Button onPress={() =>setScreen('imagen')} title='Práctica Imagen' ></Button>
+          <Button onPress={() =>setScreen('scrol')} title='Práctica scrol' ></Button>
+          <Button onPress={() =>setScreen('repaso')} title='RePaso1' ></Button>
         </View>
       )
   }

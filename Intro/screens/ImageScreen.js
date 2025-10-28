@@ -19,21 +19,18 @@ export default function ImageScreen({navigation}){
       resizeMode="cover"
       >
       <View style={styles.overlay}>
-        <Text style={styles.title}>Bienvenido</Text>
-                <Text style={styles.title}>Bienvenido</Text>
-                <Text style={styles.title}>Cargado....</Text>
+      <Text style={styles.title}>Bienvenido</Text>
+      <Text style={styles.title}>Cargado....</Text>
       </View>
       </ImageBackground>
     );
   }
-
   return(
     <ImageBackground
       source={backgroundImage}
       style={styles.background}
       resizeMode="cover"
       >
-
     <View style={styles.mainScreen}>
       <Text style={styles.mainText}>Bienvenido </Text>
     </View>
