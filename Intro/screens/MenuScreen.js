@@ -7,6 +7,7 @@ import ImageScreen from './ImageScreen'
 import ActivityScreen from './ActivityScreen'
 import ScrollScreen from  './ScrollScreen'
 import RePasoScreen from  './RePasoScreen'
+import ListasScreen from './ListasScreen'
 
 export default function MenuScreen() {
   const [screen, setScreen] = useState('menu');
@@ -33,6 +34,9 @@ export default function MenuScreen() {
     case 'repaso':
     return <RePasoScreen/>;
 
+    case 'lista':
+      return <ListasScreen/>;
+
     case 'menu':
       default:
       return (
@@ -45,6 +49,7 @@ export default function MenuScreen() {
           <Button onPress={() =>setScreen('imagen')} title='Práctica Imagen' ></Button>
           <Button onPress={() =>setScreen('scrol')} title='Práctica scrol' ></Button>
           <Button onPress={() =>setScreen('repaso')} title='RePaso1' ></Button>
+          <Button onPress={() =>setScreen('lista')} title='lista' ></Button>
         </View>
       )
   }
