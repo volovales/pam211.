@@ -8,6 +8,7 @@ import ActivityScreen from './ActivityScreen'
 import ScrollScreen from  './ScrollScreen'
 import RePasoScreen from  './RePasoScreen'
 import ListasScreen from './ListasScreen'
+import ModalScreen from './ModalScreen'
 
 export default function MenuScreen() {
   const [screen, setScreen] = useState('menu');
@@ -35,7 +36,10 @@ export default function MenuScreen() {
     return <RePasoScreen/>;
 
     case 'lista':
-      return <ListasScreen/>;
+    return <ListasScreen/>;
+
+    case 'completo':
+    return <ModalScreen/>;
 
     case 'menu':
       default:
@@ -50,11 +54,13 @@ export default function MenuScreen() {
           <Button onPress={() =>setScreen('scrol')} title='Práctica scrol' ></Button>
           <Button onPress={() =>setScreen('repaso')} title='RePaso1' ></Button>
           <Button onPress={() =>setScreen('lista')} title='lista' ></Button>
+          <Button onPress={() =>setScreen('completo')} title='completo'></Button>
         </View>
       )
   }
 }
 
+{}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
