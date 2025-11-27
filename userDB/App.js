@@ -1,9 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import InsertUsuarioScreen from './screens/InsertUsuarioScreen';
+import React from 'react';
+import UsuarioView from './screens/UsuarioView';
 
 export default function App() {
-  
-  return <InsertUsuarioScreen/>                             
-  
+  return <UsuarioView />;
 }
-

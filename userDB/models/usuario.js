@@ -1,18 +1,14 @@
 export class Usuario {
-  constructor(id, nombre, fechaCreacion) {
+  constructor(id, nombre, fecha_creacion) {
     this.id = id;
     this.nombre = nombre;
-    this.fechaCreacion = fechaCreacion || new Date().toISOString();
+    // normalizamos a fechaCreacion en el objeto para uso en la UI
+    this.fechaCreacion = fecha_creacion;
   }
 
-  // Validaciones del modelo
   static validar(nombre) {
-    if (!nombre || nombre.trim().length === 0) {
-      throw new Error('El nombre no puede estar vacío');
+    if (!nombre || !String(nombre).trim()) {
+      throw new Error("El nombre no puede estar vacío");
     }
-    if (nombre.length > 50) {
-      throw new Error('El nombre no puede tener más de 50 caracteres');
-    }
-    return true;
   }
 }
