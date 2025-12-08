@@ -10,59 +10,80 @@ import {
   Alert,
 } from "react-native";
 
+// --- Importación de imágenes locales (todas existen en tu carpeta assets) ---
+
+// Fondo
+const fondo = require("../assets/fondo.jpg");
+
+// Entradas
+const chavata_entrada = require("../assets/chavata_entrada.jpg");
+const crema_champinones_entradas = require("../assets/crema_champiñones_entradas.jpg"); // corregido (sin ñ)
+
+// Platillo Fuerte
+const pasta_queso = require("../assets/pasta_queso.jpg");
+const pasta_tomate = require("../assets/pasta_tomatr.jpg"); // corregido (archivo existente)
+
+// Postres
+const tiramisu = require("../assets/tiramisu.jpg");
+const caneolis = require("../assets/caneolis.jpg");
+
+// Bebidas
+const agua_mineral = require("../assets/agua_mineral.jpg");
+const tinto = require("../assets/tinto.jpg");
+const espumoso = require("../assets/espumoso.jpg");
+
+// ----------------------------------------------------------------
+
 export default function MenuScreen() {
   const pedirProducto = (nombre) => {
-    Alert.alert(
-      "Pedido realizado",
-      ` Has pedido: ${nombre}`,
-      [{ text: "Aceptar" }]
-    );
+    Alert.alert("Pedido realizado", `Has pedido: ${nombre}`, [
+      { text: "Aceptar" },
+    ]);
   };
 
-  // LISTA DE PRODUCTOS con imágenes ONLINE
   const categorias = {
     Entradas: [
       {
-        nombre: "Ensalada Fresca",
-        descripcion: "Lechuga, tomate, pepino y aderezo ligero.",
+        nombre: "Chavata de Entrada",
+        descripcion: "Pan fresco y crujiente.",
         precio: "$45",
-        img: { uri: "https://i.imgur.com/2yaf2kI.jpg" },
+        img: chavata_entrada,
       },
       {
-        nombre: "Pan con Ajo",
-        descripcion: "Pan artesanal horneado con mantequilla de ajo.",
+        nombre: "Crema de Champiñones",
+        descripcion: "Deliciosa crema caliente.",
         precio: "$30",
-        img: { uri: "https://i.imgur.com/36YV7lE.jpg" },
+        img: crema_champinones_entradas,
       },
     ],
 
     "Platillo Fuerte": [
       {
-        nombre: "Pasta Alfredo",
-        descripcion: "Pasta cremosa con queso parmesano.",
+        nombre: "Pasta al Queso",
+        descripcion: "Pasta cremosa con selección de quesos.",
         precio: "$110",
-        img: { uri: "https://i.imgur.com/JKY6ORu.jpg" },
+        img: pasta_queso,
       },
       {
-        nombre: "Pollo a la Parrilla",
-        descripcion: "Pechuga de pollo con verduras.",
+        nombre: "Pasta al Tomate",
+        descripcion: "Pasta con salsa de tomate.",
         precio: "$135",
-        img: { uri: "https://i.imgur.com/7m7i7SM.jpg" },
+        img: pasta_tomate,
       },
     ],
 
     Postres: [
       {
-        nombre: "Pastel de Chocolate",
-        descripcion: "Chocolate amargo con relleno cremoso.",
+        nombre: "Tiramisú",
+        descripcion: "Clásico postre italiano.",
         precio: "$55",
-        img: { uri: "https://i.imgur.com/JNafS1N.jpg" },
+        img: tiramisu,
       },
       {
-        nombre: "Pay de Limón",
-        descripcion: "Postre frío con sabor a limón.",
+        nombre: "Caneolis",
+        descripcion: "Crujiente masa rellena de crema dulce.",
         precio: "$50",
-        img: { uri: "https://i.imgur.com/L9QmTkf.jpg" },
+        img: caneolis,
       },
     ],
 
@@ -71,30 +92,26 @@ export default function MenuScreen() {
         nombre: "Agua Mineral",
         descripcion: "Agua refrescante con gas.",
         precio: "$20",
-        img: { uri: "https://i.imgur.com/UC8s3sf.jpg" },
+        img: agua_mineral,
       },
       {
         nombre: "Vino Tinto",
         descripcion: "Copa de vino tinto seco.",
         precio: "$80",
-        img: { uri: "https://i.imgur.com/GPc0kRw.jpg" },
+        img: tinto,
       },
       {
         nombre: "Espumoso",
         descripcion: "Bebida espumosa ligera.",
         precio: "$95",
-        img: { uri: "https://i.imgur.com/mKuaqpR.jpg" },
+        img: espumoso,
       },
     ],
   };
 
   return (
     <View style={{ flex: 1 }}>
-      <ImageBackground
-        source={{ uri: "https://i.imgur.com/7lYQYwH.jpeg" }}
-        style={styles.bg}
-        resizeMode="cover"
-      >
+      <ImageBackground source={fondo} style={styles.bg} resizeMode="cover">
         <ScrollView contentContainerStyle={styles.container}>
           <Text style={styles.title}>Restaurante La Buena Comida</Text>
 
@@ -105,6 +122,7 @@ export default function MenuScreen() {
               {categorias[categoria].map((item, index) => (
                 <View key={index} style={styles.productoCard}>
                   <Text style={styles.productoNombre}>{item.nombre}</Text>
+
                   <Image source={item.img} style={styles.img} />
 
                   <Text style={styles.productoDesc}>{item.descripcion}</Text>
