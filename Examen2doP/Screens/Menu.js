@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  ImageBackground,
-  Alert,
-} from "react-native";
+import {View,Text,Image,ScrollView,StyleSheet,TouchableOpacity,ImageBackground,Alert, Platform,} from "react-native";
 
 // --- Importación de imágenes locales (todas existen en tu carpeta assets) ---
 
@@ -36,10 +27,16 @@ const espumoso = require("../assets/espumoso.jpg");
 
 export default function MenuScreen() {
   const pedirProducto = (nombre) => {
+  if (Platform.OS === "web") {
+    // Para navegador
+    alert(`Has pedido: ${nombre}`);
+  } else {
+    // Para Android y iOS
     Alert.alert("Pedido realizado", `Has pedido: ${nombre}`, [
       { text: "Aceptar" },
     ]);
-  };
+  }
+};
 
   const categorias = {
     Entradas: [
